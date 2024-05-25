@@ -1,5 +1,7 @@
 import { Pressable, TextInput, View, Text } from "react-native";
 import { Formik } from "formik";
+import { ThemedView } from "../ThemedView";
+import { ThemedText } from "@/components/ThemedText";
 
 export default function Login(props: any) {
   return (
@@ -9,7 +11,7 @@ export default function Login(props: any) {
         onSubmit={(values) => console.log(values)}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
-          <View
+          <ThemedView
             style={{
               flex: 1,
               alignItems: "center",
@@ -18,31 +20,56 @@ export default function Login(props: any) {
               gap: 16,
             }}
           >
-            <Text>Login to South Coast Radio</Text>
+            <ThemedText>Login to South Coast Radio</ThemedText>
             <TextInput
               placeholder="Email"
-              style={{ padding: 8 }}
+              style={{
+                padding: 8,
+                borderWidth: 1,
+                borderColor: "white",
+                borderRadius: 8,
+                color: "white"
+              }}
               value={values.email}
               onChangeText={handleChange("email")}
               onBlur={handleBlur("email")}
             />
             <TextInput
               placeholder="Password"
-              style={{ padding: 8 }}
+              style={{
+                padding: 8,
+                borderWidth: 1,
+                borderColor: "white",
+                borderRadius: 8,
+                color: "white"
+              }}
               value={values.password}
               onChangeText={handleChange("password")}
               onBlur={handleBlur("password")}
               secureTextEntry={true}
             />
             <View style={{ flexDirection: "row", gap: 16 }}>
-              <Pressable onPress={handleSubmit} style={{backgroundColor:"lightblue", padding:8, borderRadius:8}}>
-                <Text>Login</Text>
+              <Pressable
+                onPress={handleSubmit}
+                style={{
+                  backgroundColor: "lightblue",
+                  padding: 8,
+                  borderRadius: 8,
+                }}
+              >
+                <Text style={{fontWeight: "bold", textTransform:"uppercase"}}>Login</Text>
               </Pressable>
-              <Pressable style={{backgroundColor:"orange", padding:8, borderRadius:8}}>
-                <Text>Register</Text>
+              <Pressable
+                style={{
+                  backgroundColor: "orange",
+                  padding: 8,
+                  borderRadius: 8,
+                }}
+              >
+                <Text style={{fontWeight: "bold", textTransform:"uppercase"}}>Register</Text>
               </Pressable>
             </View>
-          </View>
+          </ThemedView>
         )}
       </Formik>
     </>

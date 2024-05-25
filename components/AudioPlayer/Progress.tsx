@@ -2,6 +2,7 @@ import Slider from "@react-native-community/slider";
 import React from "react";
 import { Dimensions, StyleSheet, Text, View } from "react-native";
 import TrackPlayer, { useProgress } from "react-native-track-player";
+import { ThemedText } from "@/components/ThemedText";
 
 export default function Progress() {
   const { position, duration } = useProgress();
@@ -16,16 +17,17 @@ export default function Progress() {
         minimumValue={0}
         maximumValue={duration}
         thumbTintColor="#FFD479"
-        minimumTrackTintColor="#FFD479"
-        maximumTrackTintColor="#FFFFFF"
+        minimumTrackTintColor="lightblue"
+        maximumTrackTintColor="orange"
         onSlidingComplete={TrackPlayer.seekTo}
       />
-      <View style={{flex:1, flexDirection: "row", gap:8}}>
-        <Text>{formatSeconds(position)}</Text>
-        <Text> - </Text>
-        <Text>
+      <View style={{flex:1, flexDirection: "row", gap:606, justifyContent:"space-between"}}>
+      <ThemedText>00:00</ThemedText>
+        <ThemedText>{formatSeconds(position)}</ThemedText>
+ 
+        <ThemedText>
           {formatSeconds(Math.max(0, duration - position))}
-        </Text>
+        </ThemedText>
       </View>
     </View>
   );

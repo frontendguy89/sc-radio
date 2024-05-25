@@ -6,24 +6,31 @@ import { SetupService } from "@/services/SetupService";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import TrackPlayer, { useActiveTrack } from "react-native-track-player";
+import { ThemedView } from "@/components/ThemedView";
+import { ThemedText } from "@/components/ThemedText";
+import { TrackInfo } from "@/components/AudioPlayer/TrackInfo";
+import Progress from "@/components/AudioPlayer/Progress";
 
 export default function Index() {
   const track = useActiveTrack();
   const isPlayerReady = useSetupPlayer();
 
   return (
-    <View
+    <ThemedView
       style={{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        gap:32,
       }}
     >
       <Logo />
       <Login />
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <ThemedText>Edit app/index.tsx to edit this screen.</ThemedText>
+      <TrackInfo track={track} />
+      <Progress />
       <PlayerControls />
-    </View>
+    </ThemedView>
   );
 }
 function useSetupPlayer() {

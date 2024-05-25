@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import type { Track } from "react-native-track-player";
+import { ThemedText } from "@/components/ThemedText";
 
 export const TrackInfo: React.FC<{
   track?: Track;
@@ -13,9 +14,9 @@ export const TrackInfo: React.FC<{
     <View>
       <Image source={{ uri: imageUri }} />
       <View style={{flex:1, flexDirection: "row", gap:8, alignItems:"center", justifyContent:"center"}}>
-        <Text>{track?.title}</Text>
-        <Text> - </Text>
-        <Text>{track?.artist}</Text>
+        <ThemedText>{track?.title}</ThemedText>
+        <ThemedText> - </ThemedText>
+        <ThemedText>{track?.artist}</ThemedText>
       </View>
     </View>
   );

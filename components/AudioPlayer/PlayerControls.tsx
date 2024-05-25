@@ -8,9 +8,6 @@ import { TrackInfo } from "./TrackInfo";
 export default function PlayerControls() {
   return (
     <View>
-      <TrackInfo />
-      <Progress />
-
       <View
         style={{
           flex: 1,
