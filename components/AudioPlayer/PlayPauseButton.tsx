@@ -27,7 +27,7 @@ export default function PlayPauseButton({
         <MaterialIcons
           name={playing ? "pause-circle" : "play-circle"}
           size={64}
-          color="black"
+          color="orange"
           raised
         />
       </Pressable>

@@ -1,4 +1,5 @@
 import PlayerControls from "@/components/AudioPlayer/PlayerControls";
+import Login from "@/components/Login/LoginForm";
 import Logo from "@/components/Logo/Logo";
 import { QueueInitialTracksService } from "@/services/QueueInitialTracksService";
 import { SetupService } from "@/services/SetupService";
@@ -7,7 +8,6 @@ import { Text, View } from "react-native";
 import TrackPlayer, { useActiveTrack } from "react-native-track-player";
 
 export default function Index() {
-
   const track = useActiveTrack();
   const isPlayerReady = useSetupPlayer();
 
@@ -20,6 +20,7 @@ export default function Index() {
       }}
     >
       <Logo />
+      <Login />
       <Text>Edit app/index.tsx to edit this screen.</Text>
       <PlayerControls />
     </View>
@@ -46,4 +47,3 @@ function useSetupPlayer() {
   }, []);
   return playerReady;
 }
-

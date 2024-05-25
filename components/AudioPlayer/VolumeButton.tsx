@@ -5,7 +5,7 @@ export default function VolumeButton() {
   return (
     <View>
       <Pressable>
-        <MaterialIcons name="volume-up" size={32} color="black" />
+        <MaterialIcons name="volume-up" size={32} color="lightblue" />
       </Pressable>
     </View>
   );
