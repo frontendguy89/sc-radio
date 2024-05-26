@@ -21,15 +21,17 @@ export default function Index() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        gap:32,
+        gap: 32,
       }}
     >
       <Logo />
       <Login />
       <ThemedText>Edit app/index.tsx to edit this screen.</ThemedText>
-      <TrackInfo track={track} />
-      <Progress />
-      <PlayerControls />
+      <View>
+        <TrackInfo track={track} />
+        <Progress />
+        <PlayerControls />
+      </View>
     </ThemedView>
   );
 }

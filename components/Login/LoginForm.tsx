@@ -28,7 +28,8 @@ export default function Login(props: any) {
                 borderWidth: 1,
                 borderColor: "white",
                 borderRadius: 8,
-                color: "white"
+                color: "white",
+                width: "100%"
               }}
               value={values.email}
               onChangeText={handleChange("email")}
@@ -41,7 +42,8 @@ export default function Login(props: any) {
                 borderWidth: 1,
                 borderColor: "white",
                 borderRadius: 8,
-                color: "white"
+                color: "white",
+                width: "100%"
               }}
               value={values.password}
               onChangeText={handleChange("password")}

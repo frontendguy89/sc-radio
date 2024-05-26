@@ -8,6 +8,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { Stack } from "expo-router";
 import { useEffect } from "react";
 import "react-native-reanimated";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Drawer } from 'expo-router/drawer';
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 
@@ -30,11 +32,13 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+    <GestureHandlerRootView>
+      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+        <Drawer>
+          <Drawer.Screen name="index" />
+          <Drawer.Screen name="loginregister" />
+        </Drawer>
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }

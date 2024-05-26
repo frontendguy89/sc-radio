@@ -16,7 +16,7 @@ export default function Progress() {
         value={position}
         minimumValue={0}
         maximumValue={duration}
-        thumbTintColor="#FFD479"
+        thumbTintColor="white"
         minimumTrackTintColor="lightblue"
         maximumTrackTintColor="orange"
         onSlidingComplete={TrackPlayer.seekTo}
