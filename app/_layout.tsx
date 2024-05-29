@@ -12,6 +12,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Drawer } from 'expo-router/drawer';
 
 import { useColorScheme } from "@/hooks/useColorScheme";
+import TrackPlayer from "react-native-track-player";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -36,7 +37,7 @@ export default function RootLayout() {
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <Drawer>
           <Drawer.Screen name="index" />
-          <Drawer.Screen name="loginregister" />
+          <Drawer.Screen name="/login" />
         </Drawer>
       </ThemeProvider>
     </GestureHandlerRootView>

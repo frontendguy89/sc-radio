@@ -25,8 +25,7 @@ export default function Index() {
       }}
     >
       <Logo />
-      <Login />
-      <ThemedText>Edit app/index.tsx to edit this screen.</ThemedText>
+      <ThemedText type="title">Welcome to South Coast Radio</ThemedText>
       <View>
         <TrackInfo track={track} />
         <Progress />

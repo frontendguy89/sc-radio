@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import { ThemedView } from "../ThemedView";
 import { ThemedText } from "@/components/ThemedText";
 
-export default function Login(props: any) {
+export default function LoginForm(props: any) {
   return (
     <>
       <Formik
@@ -20,7 +20,7 @@ export default function Login(props: any) {
               gap: 16,
             }}
           >
-            <ThemedText>Login to South Coast Radio</ThemedText>
+            <ThemedText type="title">Login to South Coast Radio</ThemedText>
             <TextInput
               placeholder="Email"
               style={{
@@ -29,7 +29,7 @@ export default function Login(props: any) {
                 borderColor: "white",
                 borderRadius: 8,
                 color: "white",
-                width: "100%"
+                width: "100%",
               }}
               value={values.email}
               onChangeText={handleChange("email")}
@@ -43,7 +43,7 @@ export default function Login(props: any) {
                 borderColor: "white",
                 borderRadius: 8,
                 color: "white",
-                width: "100%"
+                width: "100%",
               }}
               value={values.password}
               onChangeText={handleChange("password")}
@@ -59,8 +59,13 @@ export default function Login(props: any) {
                   borderRadius: 8,
                 }}
               >
-                <Text style={{fontWeight: "bold", textTransform:"uppercase"}}>Login</Text>
+                <Text
+                  style={{ fontWeight: "bold", textTransform: "uppercase" }}
+                >
+                  Login
+                </Text>
               </Pressable>
+
               <Pressable
                 style={{
                   backgroundColor: "orange",
@@ -68,7 +73,11 @@ export default function Login(props: any) {
                   borderRadius: 8,
                 }}
               >
-                <Text style={{fontWeight: "bold", textTransform:"uppercase"}}>Register</Text>
+                <Text
+                  style={{ fontWeight: "bold", textTransform: "uppercase" }}
+                >
+                  Register
+                </Text>
               </Pressable>
             </View>
           </ThemedView>
