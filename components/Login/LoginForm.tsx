@@ -59,11 +59,11 @@ export default function LoginForm(props: any) {
                   borderRadius: 8,
                 }}
               >
-                <Text
+                <ThemedText
                   style={{ fontWeight: "bold", textTransform: "uppercase" }}
                 >
                   Login
-                </Text>
+                </ThemedText>
               </Pressable>
 
               <Pressable
@@ -73,11 +73,11 @@ export default function LoginForm(props: any) {
                   borderRadius: 8,
                 }}
               >
-                <Text
+                <ThemedText
                   style={{ fontWeight: "bold", textTransform: "uppercase" }}
                 >
                   Register
-                </Text>
+                </ThemedText>
               </Pressable>
             </View>
           </ThemedView>
