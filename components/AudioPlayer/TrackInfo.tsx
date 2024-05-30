@@ -12,7 +12,6 @@ export const TrackInfo: React.FC<{
 
   return (
     <View>
-      <Image source={{ uri: imageUri }} />
       <View style={{flex:1, flexDirection: "row", gap:8, alignItems:"center", justifyContent:"center"}}>
         <ThemedText>{track?.title}</ThemedText>
         <ThemedText> - </ThemedText>

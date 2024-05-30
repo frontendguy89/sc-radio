@@ -9,12 +9,16 @@ import { Stack } from "expo-router";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Drawer } from 'expo-router/drawer';
+import { Drawer } from "expo-router/drawer";
+import { PaperProvider } from 'react-native-paper';
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import TrackPlayer from "react-native-track-player";
+import { PlaybackService } from "@/services/PlaybackService";
 
 SplashScreen.preventAutoHideAsync();
+
+TrackPlayer.registerPlaybackService(() => PlaybackService);
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -35,10 +39,12 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Drawer>
-          <Drawer.Screen name="index" />
-          <Drawer.Screen name="/login" />
-        </Drawer>
+        <PaperProvider>
+          <Drawer>
+            <Drawer.Screen name="index" />
+            <Drawer.Screen name="/login" />
+          </Drawer>
+        </PaperProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
   );
